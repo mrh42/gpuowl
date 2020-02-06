@@ -41,8 +41,8 @@ public:
   u32 logStep = 200000;
   int fftSize = 0;
 
-  u32 B1 = 1000000;
-  u32 B2 = 0;
+  u64 B1 = 1000000;
+  u64 B2 = 0;
   u32 B2_B1_ratio = 30;
 
   u32 prpExp = 0;
