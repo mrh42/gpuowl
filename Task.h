@@ -22,8 +22,8 @@ struct Task {
   string line; // the verbatim worktodo line, used in deleteTask().
 
   // PM1
-  u32 B1 = 0;
-  u32 B2 = 0;
+  u64 B1 = 0;
+  u64 B2 = 0;
 
   u32 bitLo = 0;
   u32 wantsPm1 = 0; // An indication of how much P-1 is desired before PRP
@@ -39,7 +39,7 @@ struct Task {
     string prefix;
     char buf[256];
     if (B1 || B2) {
-      snprintf(buf, sizeof(buf), "B1=%u,B2=%u;", B1, B2);
+      snprintf(buf, sizeof(buf), "B1=%ul,B2=%ul;", B1, B2);
       prefix = buf;
     }
     snprintf(buf, sizeof(buf), "%s=%s,1,2,%u,-1,%u,%u", (kind == PRP ? "PRP" : "PFactor"), AID.empty() ? "N/A" : AID.c_str(), exponent, bitLo, wantsPm1);
